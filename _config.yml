@@ -1,0 +1,72 @@
+# GitHub Pages設定
+title: "Budget Battle App - 予算バトルアプリ"
+description: "ゲーミフィケーション要素を取り入れた革新的な家計管理アプリ"
+url: "https://yourusername.github.io"
+baseurl: "/Monthly-Budget-Tracking-App"
+
+# サイト情報
+author: "Budget Battle Team"
+email: "info@budgetbattle.app"
+lang: "ja"
+
+# GitHub Pages設定
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO設定
+google_analytics: # Google Analytics IDを設定
+google_site_verification: # Google Search Console認証ID
+
+# ソーシャルメディア
+twitter:
+  username: budgetbattle
+  card: summary_large_image
+
+# Open Graph設定
+og_image: /assets/og-image.png
+
+# 除外ファイル
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+
+# 処理対象ファイル
+include:
+  - _pages
+
+# マークダウン設定
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# パーマリンク設定
+permalink: pretty
+
+# コレクション設定
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      lang: "ja"
