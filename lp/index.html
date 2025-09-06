@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Battle App - 予算バトルアプリ | ゲーミフィケーションで楽しく家計管理</title>
+    <meta name="description" content="Budget Battle Appは、ゲーミフィケーション要素を取り入れた革新的な家計管理アプリです。週ごとの予算バトルで楽しく支出を管理し、勝利を目指しましょう！">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">⚔️</span>
+                <span class="brand-text">Budget Battle</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">機能</a>
+                <a href="#how-it-works" class="nav-link">使い方</a>
+                <a href="#download" class="nav-link">ダウンロード</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-main">Budget Battle</span>
+                        <span class="title-sub">予算バトルアプリ</span>
+                    </h1>
+                    <p class="hero-description">
+                        毎週の予算バトルで楽しく家計管理！<br>
+                        HPゲージで残高を可視化し、勝利を目指そう
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <span>📱</span>
+                            アプリをダウンロード
+                        </a>
+                        <a href="#demo" class="btn btn-secondary">
+                            <span>🎮</span>
+                            デモを見る
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="app-preview">
+                                <div class="hp-gauge-demo">
+                                    <div class="gauge-label">今週の予算残高</div>
+                                    <div class="gauge-bar">
+                                        <div class="gauge-fill" id="demo-gauge"></div>
+                                    </div>
+                                    <div class="gauge-amount">¥15,000 / ¥25,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要機能セクション -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">主要機能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>HPゲージ表示</h3>
+                    <p>予算残高をゲームのHPゲージのように視覚化。緑→黄→赤の色変化で直感的に把握できます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>週次バトルシステム</h3>
+                    <p>毎週末に勝敗判定！予算内で過ごせたら勝利。連勝記録で達成感を味わえます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>音声入力</h3>
+                    <p>「1500円」と話すだけで支出記録。手間なく素早い入力が可能です。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>クイック入力</h3>
+                    <p>よく使う金額を学習して最大3つのボタン表示。ワンタップで支出記録完了。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>勝利演出</h3>
+                    <p>週末の勝利時には特別なサウンドとアニメーション。モチベーション維持をサポート。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>月次レポート</h3>
+                    <p>月末に勝率や支出傾向を表示。過去のデータと比較して改善点を発見。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使い方セクション -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">使い方</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>月次予算を設定</h3>
+                        <p>まず月の予算を設定します。アプリが自動で週予算を計算します。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>支出を記録</h3>
+                        <p>音声入力、クイックボタン、手動入力の3つの方法で支出を素早く記録。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>HPゲージで残高確認</h3>
+                        <p>予算残高がHPゲージで表示。使いすぎると赤くなってピンチを知らせます。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>週末にバトル結果</h3>
+                        <p>週末に勝敗判定！予算内なら勝利で特別演出。連勝を目指しましょう。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特徴セクション -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">なぜBudget Battleなのか？</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>📱 シンプル操作</h3>
+                    <p>複雑な機能は排除。家計管理に必要な機能だけを厳選しました。</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🎮 ゲーム感覚</h3>
+                    <p>従来の家計簿アプリが続かない人も、ゲーム要素で楽しく継続できます。</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>⚡ 高速入力</h3>
+                    <p>音声認識とクイックボタンで、支出記録が従来の半分の時間で完了。</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🎯 週単位管理</h3>
+                    <p>月単位より身近な週単位での管理で、より細かな予算コントロールが可能。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- デモセクション -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">アプリデモ</h2>
+            <div class="demo-content">
+                <div class="demo-video">
+                    <div class="video-placeholder">
+                        <div class="play-button" id="demo-play-btn">
+                            <span>▶️</span>
+                            デモを再生
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-description">
+                    <h3>実際の操作を確認</h3>
+                    <ul>
+                        <li>音声入力での支出記録</li>
+                        <li>HPゲージの色変化</li>
+                        <li>週末の勝利演出</li>
+                        <li>月次レポート表示</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ダウンロードセクション -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">今すぐダウンロード</h2>
+            <div class="download-content">
+                <div class="download-text">
+                    <h3>Budget Battle で家計管理を始めよう</h3>
+                    <p>楽しく続けられる家計管理アプリで、あなたの生活をもっと豊かに。</p>
+                </div>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn ios">
+                        <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="App Storeからダウンロード">
+                    </a>
+                    <div class="download-info">
+                        <p>🚧 現在開発中</p>
+                        <p>iOS 17.0以降対応予定</p>
+                        <p>iPhone・iPad対応</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">⚔️</span>
+                    <span class="brand-text">Budget Battle</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#features">機能</a>
+                    <a href="#how-it-works">使い方</a>
+                    <a href="#download">ダウンロード</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Budget Battle App. All rights reserved.</p>
+                <p>楽しく続けられる家計管理を。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
