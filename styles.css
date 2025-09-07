@@ -308,11 +308,65 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: 1px solid #e2e8f0;
+    position: relative;
 }
 
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* 近日公開予定カードのスタイル */
+.feature-card.coming-soon {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px dashed #cbd5e1;
+    opacity: 0.8;
+}
+
+.feature-card.coming-soon:hover {
+    transform: translateY(-4px);
+    opacity: 0.9;
+}
+
+.feature-card.coming-soon .feature-icon {
+    opacity: 0.6;
+    filter: grayscale(0.3);
+}
+
+.feature-card.coming-soon h3 {
+    color: #475569;
+}
+
+.feature-card.coming-soon p {
+    color: #64748b;
+}
+
+/* 近日公開バッジ */
+.coming-soon-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #f59e0b, #d97706);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+    animation: coming-soon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes coming-soon-pulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
+    }
 }
 
 .feature-icon {
@@ -381,6 +435,17 @@ section {
 .step-content p {
     color: #64748b;
     line-height: 1.6;
+}
+
+/* 近日公開予定テキストのスタイル */
+.coming-soon-text {
+    color: #f59e0b;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 /* ========== 特徴セクション ========== */
@@ -480,6 +545,23 @@ section {
     position: absolute;
     left: 0;
     top: 10px;
+}
+
+/* 近日公開予定のデモリスト項目 */
+.demo-description li.coming-soon-item {
+    opacity: 0.7;
+    color: #94a3b8;
+}
+
+.demo-description li.coming-soon-item::before {
+    content: '🚧';
+}
+
+.coming-soon-small {
+    font-size: 0.8rem;
+    color: #f59e0b;
+    font-weight: 600;
+    margin-left: 5px;
 }
 
 /* ========== ダウンロードセクション ========== */

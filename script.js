@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initDemoFeatures();
     initGaugeDemo();
+    initComingSoonFeatures();
 });
 
 // ========== ナビゲーション機能 ==========
@@ -284,6 +285,67 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     }
+}
+
+// ========== 近日公開予定機能 ==========
+function initComingSoonFeatures() {
+    // 近日公開予定カードのインタラクション
+    const comingSoonCards = document.querySelectorAll('.feature-card.coming-soon');
+    
+    comingSoonCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // バッジを一時的にパルス効果
+            const badge = this.querySelector('.coming-soon-badge');
+            if (badge) {
+                badge.style.animation = 'none';
+                setTimeout(() => {
+                    badge.style.animation = 'coming-soon-pulse 0.6s ease-in-out 3';
+                    setTimeout(() => {
+                        badge.style.animation = 'coming-soon-pulse 2s ease-in-out infinite';
+                    }, 1800);
+                }, 10);
+            }
+            
+            // 簡単なフィードバック
+            const originalBg = this.style.background;
+            this.style.background = 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)';
+            setTimeout(() => {
+                this.style.background = originalBg;
+            }, 300);
+        });
+        
+        // ホバー時の追加効果
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.feature-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.feature-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+    
+    // 近日公開テキストのアニメーション
+    const comingSoonTexts = document.querySelectorAll('.coming-soon-text, .coming-soon-small');
+    
+    // 定期的に注意を引くアニメーション
+    setInterval(() => {
+        comingSoonTexts.forEach((text, index) => {
+            setTimeout(() => {
+                text.style.transform = 'scale(1.05)';
+                text.style.transition = 'transform 0.2s ease';
+                setTimeout(() => {
+                    text.style.transform = 'scale(1)';
+                }, 200);
+            }, index * 100);
+        });
+    }, 10000); // 10秒ごと
 }
 
 // ========== エラーハンドリング ==========
